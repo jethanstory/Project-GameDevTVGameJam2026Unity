@@ -47,16 +47,16 @@ public class FollowingEnemy : MonoBehaviour
     void Update()
     {
         Quaternion rotation = Quaternion.LookRotation(player.position - transform.position);
-        transform.rotation = Quaternion.Slerp (transform.rotation, rotation, Time.deltaTime * damping);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
         //float distance = Vector3.Distance(player.transform.position,transform.position);
         //if (agent != null && agent.remainingDistance <= agent.stoppingDistance)
         //{
-            
-            //agent.SetDestination(RandomNavMeshLocation());
+
+        //agent.SetDestination(RandomNavMeshLocation());
         //}
         transform.LookAt(player);
         agent.SetDestination(player.position);
-        
+
 
     }
 }

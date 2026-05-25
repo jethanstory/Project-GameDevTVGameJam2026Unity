@@ -14,6 +14,8 @@ public class WanderingEnemyAI : MonoBehaviour
     public float enemyMovementSpeed;
     public float damping;
 
+    public bool isFollowing;
+
     public GameObject lightSource;
     public Transform fpsTarget;
     public Transform fpsWanderTarget;
@@ -47,6 +49,7 @@ public class WanderingEnemyAI : MonoBehaviour
             //Disables the Advanced Wander AI script and the NavMeshAgent script so the enemy stops when you are in range. 
             GameObject.Find("WanderingEnemy").GetComponent<AdvancedWanderAI>().enabled = false;
             GameObject.Find("WanderingEnemy").GetComponent<FollowingEnemy>().enabled = true;
+            isFollowing = true;
             //gameObject.GetComponent<NavMeshAgent>().enabled = false;
             lookAtPlayer();
 
@@ -64,6 +67,7 @@ public class WanderingEnemyAI : MonoBehaviour
 
             GameObject.Find("WanderingEnemy").GetComponent<AdvancedWanderAI>().enabled = true;
             GameObject.Find("WanderingEnemy").GetComponent<FollowingEnemy>().enabled = false;
+            isFollowing = false;
             //gameObject.GetComponent<NavMeshAgent>().enabled = true;
             //Wander to player position
             //WandertoPlacePlease();

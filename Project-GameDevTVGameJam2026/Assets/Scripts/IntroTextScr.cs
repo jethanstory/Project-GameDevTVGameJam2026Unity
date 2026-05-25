@@ -6,6 +6,10 @@ public class IntroTextScr : MonoBehaviour
 {
     float startTime = 0f;
     public GameObject introText;
+    public GameObject runText;
+    public GameObject enemyAi;
+
+    bool onlyWarning = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,6 +24,15 @@ public class IntroTextScr : MonoBehaviour
         if (startTime > 3)
         {
             introText.SetActive(false);
+        }
+
+        if (enemyAi.GetComponent<WanderingEnemyAI>().isFollowing)//&& !onlyWarning)
+        {
+            runText.SetActive(true);
+        }
+        if (!enemyAi.GetComponent<WanderingEnemyAI>().isFollowing)//&& onlyWarning)
+        {
+            runText.SetActive(false);
         }
     }
 }
