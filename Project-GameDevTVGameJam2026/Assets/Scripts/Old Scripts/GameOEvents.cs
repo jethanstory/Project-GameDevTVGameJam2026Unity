@@ -21,13 +21,15 @@ public class GameOEvents : MonoBehaviour
     public void StartGame()
     {
         //SceneManager.LoadScene("TestStartScene"); //SceneManager.LoadScene("Forest"); 
-        SceneManager.LoadScene("TextIntro"); //SceneManager.LoadScene("Forest"); 
+        SceneManager.LoadScene("MainScene"); //SceneManager.LoadScene("Forest");
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     public void MenuScene()
     {
         // SceneManager.LoadScene("Credits");
-        SceneManager.LoadScene("MainScene"); //SceneManager.LoadScene("Forest"); 
+        SceneManager.LoadScene("MainMenu"); //SceneManager.LoadScene("Forest"); 
     }
     public void CreditsScene()
     {
